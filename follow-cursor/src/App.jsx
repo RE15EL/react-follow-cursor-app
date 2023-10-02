@@ -20,6 +20,12 @@ function App() {
     }
   }, [enabled])
 
+  // change body className
+  useEffect(() => {   
+    document.body.classList.toggle('no-cursor', enabled);
+    return () => document.body.classList.remove('no-cursor');
+  }, [enabled])
+
   const cirlceClassName = `${enabled? "circle" : "hide"}`;
 
   return (
